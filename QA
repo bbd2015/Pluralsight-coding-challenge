@@ -1,0 +1,31 @@
+1. Tell​​ us ​​about ​​your ​​similarity​ ​calculation ​​and ​​why ​​you ​​chose ​​it.
+ 
+ 	Similarity Measure is a distance with dimensions representing features of the objects. 
+
+	In this project, I use Euclidean distance metric. It's the most common use of distance.
+
+	Also, I applied Cosine similarity metric, because feature matrix I built to find user similarity is sparse, and Cosine similarity is efficient to evaluate, especially for sparse vectors 
+
+2. We ​​have ​​provided ​​you ​​with ​​a ​​relatively ​​small ​​sample ​​of ​​users. ​​​​At​ ​true ​​scale,​​the number​ ​of​ ​users,​ ​and​ ​their​ ​associated​ ​behavior,​ ​would​ ​be​ ​much​ ​larger.​ ​​ ​What considerations​ ​would​ ​you​ ​make​ ​to​ ​accommodate​ ​that?
+
+	If dataset is too big, algorithms may crash, first we can check to see if can allocate more memory.
+
+	Though dataset is big, we may not need to work with all of the data. So we can take random sample of data first, use sample data to find a good machine learning model before using all of the data.
+
+	Some data format needs more memory, we can also consider to change data format to save memory, such as transform CSV file to binary format HDF.
+
+	Pandas library we can load large CSV files in chunks. This is also a good choice.
+
+	Another effective method is using relational database, since the data is stored on disk, can be loaded in batches and obtained using SQL.
+
+
+3. Given​​ the​ ​context ​​for ​​which ​​you ​​might ​​assume ​​an​ ​API ​​like ​​this ​​would ​​be ​​used,​​is there​ ​​anything​ ​else​ ​you​ ​would​ ​think​ ​about?​ ​(e.g.​ ​other​ ​data​ ​you​ ​would like​ ​to​ ​collect)
+
+	In this API, input is user_handle, result is summary of the most similar users.
+
+	For further consideration, I'd like this API more displayable.
+	Can built three seperate models, so that I use more features for every csv file. And here input is also user_handle, result is  also summary of similar user but from different files. We can compare these user_handles to find more pattern.
+
+	Now model I built is to combine feature vectors with weight 1:1:1, next can apply different weight and check the similarity score, to find better model.
+
+
