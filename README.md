@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-# PluralSight_coding_challenge
+
 ## Flask RESTful API for User Similarity
 This is a Flask application to choose appropriate features and do calculations to identiy similar users. Result can be accessible via a structured, RESTful API. The endpoint can take as an input a user handle and return a summary of the most similar users. Also, I use SQLite as back-end store in this project.
 
@@ -28,6 +28,6 @@ This is a Flask application to choose appropriate features and do calculations t
           python3 ap.py <port> 
 
 =======
-# PluralSight_coding_challenge
+
 >>>>>>> a60cf507a3b2511e86230a2502a8aa4335a201bf
 
